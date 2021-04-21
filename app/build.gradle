@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -37,6 +38,18 @@ dependencies {
     implementation Dependencies.ktxCore
     implementation Dependencies.appcompat
     implementation Dependencies.material
+
+    implementation Dependencies.dagger
+    implementation Dependencies.daggerAndroid
+    implementation Dependencies.daggerAndroidSupport
+    kapt Dependencies.daggerCompiler
+    kapt Dependencies.daggerAndroidProcessor
+
+    implementation Dependencies.lifecycleExtensions
+
+    implementation Dependencies.retrofit
+    implementation Dependencies.okhttp3LoggingInterceptor
+    implementation Dependencies.retrofitGsonConverter
 
     testImplementation TestDependencies.junit
     androidTestImplementation TestDependencies.extJunit
