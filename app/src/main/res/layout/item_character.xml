@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="data"
+            type="com.narinc.base.data.model.Item" />
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -16,9 +23,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
-            android:padding="@dimen/spacing_normal"
-            android:lines="1"
             android:ellipsize="end"
+            android:lines="1"
+            android:padding="@dimen/spacing_normal"
+            android:text="@{data.name}"
             android:textAppearance="?attr/textAppearanceListItem"
             tools:text="@tools:sample/lorem" />
     </FrameLayout>
