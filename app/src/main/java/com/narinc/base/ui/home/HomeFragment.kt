@@ -1,4 +1,4 @@
-package com.narinc.base.ui
+package com.narinc.base.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
