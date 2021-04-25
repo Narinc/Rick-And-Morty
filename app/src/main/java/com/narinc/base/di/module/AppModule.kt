@@ -1,10 +1,11 @@
 package com.narinc.base.di.module
 
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
-@Module(includes = [
-    ViewModelModule::class,
-    ClientModule::class])
+@Module
+@InstallIn(SingletonComponent::class)
 class AppModule {
 
 }
