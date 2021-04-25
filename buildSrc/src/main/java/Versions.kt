@@ -13,10 +13,11 @@ object Versions {
 
     const val dagger = "2.19"
 
-    const val lifecycleExtensions = "2.2.0"
-
     const val retrofit = "2.4.0"
     const val okhttp3 = "3.9.1"
+
+    const val lifecycleExtensions = "2.2.0"
+    const val navigation = "2.1.0"
 }
 
 object TestVersions {

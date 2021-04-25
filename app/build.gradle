@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id "androidx.navigation.safeargs.kotlin"
+    id 'org.jetbrains.kotlin.android.extensions'
 }
 
 android {
@@ -31,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
@@ -45,11 +50,14 @@ dependencies {
     kapt Dependencies.daggerCompiler
     kapt Dependencies.daggerAndroidProcessor
 
-    implementation Dependencies.lifecycleExtensions
-
     implementation Dependencies.retrofit
     implementation Dependencies.okhttp3LoggingInterceptor
     implementation Dependencies.retrofitGsonConverter
+
+    implementation Dependencies.lifecycleExtensions
+
+    implementation Dependencies.navigationFragment
+    implementation Dependencies.navigationUi
 
     testImplementation TestDependencies.junit
     androidTestImplementation TestDependencies.extJunit
