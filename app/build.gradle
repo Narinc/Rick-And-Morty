@@ -52,6 +52,7 @@ dependencies {
     implementation Dependencies.hiltLifecycleViewModel
     kapt Dependencies.hiltCompiler
 
+
     implementation Dependencies.retrofit
     implementation Dependencies.okhttp3LoggingInterceptor
     implementation Dependencies.retrofitGsonConverter
@@ -60,6 +61,7 @@ dependencies {
 
     implementation Dependencies.navigationFragment
     implementation Dependencies.navigationUi
+    implementation Dependencies.paging
 
     testImplementation TestDependencies.junit
     androidTestImplementation TestDependencies.extJunit
