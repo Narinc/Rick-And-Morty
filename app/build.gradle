@@ -1,9 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'org.jetbrains.kotlin.android.extensions'
     id 'kotlin-kapt'
-    id "androidx.navigation.safeargs.kotlin"
+    id 'kotlin-parcelize'
+    id "androidx.navigation.safeargs"
     id 'dagger.hilt.android.plugin'
 }
 
@@ -22,26 +22,24 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
     buildFeatures {
-        dataBinding true
+        dataBinding = true
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-    androidExtensions {
-        experimental = true
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
@@ -54,19 +52,32 @@ dependencies {
     //Hilt DI
     implementation Dependencies.daggerHilt
     kapt Dependencies.daggerHiltCompiler
+    implementation Dependencies.daggerHiltNavFragment
     implementation Dependencies.hiltLifecycleViewModel
     kapt Dependencies.hiltCompiler
 
-
     implementation Dependencies.retrofit
+    implementation Dependencies.moshiConverter
+
     implementation Dependencies.okhttp3LoggingInterceptor
-    implementation Dependencies.retrofitGsonConverter
+
+    implementation Dependencies.kotlinCoroutinesAdapter
+
+    implementation Dependencies.moshi
+    implementation Dependencies.moshiKotlin
 
     implementation Dependencies.lifecycleExtensions
 
     implementation Dependencies.navigationFragment
     implementation Dependencies.navigationUi
     implementation Dependencies.paging
+
+    implementation Dependencies.roomRuntime
+    kapt Dependencies.roomCompiler
+    //Kotlin Extensions and Coroutines support for Room
+    implementation Dependencies.roomKtx
+
+    implementation Dependencies.glide
 
     testImplementation TestDependencies.junit
     androidTestImplementation TestDependencies.extJunit

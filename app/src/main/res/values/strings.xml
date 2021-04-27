@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">base-project</string>
+    <string name="app_name">Rick And Morty</string>
+    <string name="retry">Retry</string>
+    <string name="error">Something went wrong…</string>
+    <string name="status">%1$s , %2$s</string>
+    <string name="episodes">Episodes</string>
 </resources>
